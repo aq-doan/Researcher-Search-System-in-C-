@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KIT206Assignment2.Entity
 {
-    public class Student
+    public class Student: Researcher
     {
         public string Degree { get; set; }
     }

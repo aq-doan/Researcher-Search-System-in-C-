@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace KIT206Assignment2.Entity
 {
-    public class Staff
+    public class Staff : Researcher
     {
+        public float ThreeYearAverage()
+        {
+
+        }
     }
 }

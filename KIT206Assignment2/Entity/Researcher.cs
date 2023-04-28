@@ -14,31 +14,34 @@ namespace KIT206Assignment2.Entity
         public string Title { get; set; }
         public string School { get; set; }
         public string campus { get; set; }
-        public string email { get; set; }
-        public string photo { get; set; }
+        public string email { get; set; };
+        public string Photot {get; set; }
+        public EmploymentLevel Job { get; set; }
 
-        public List<Position> Position { get; set; }
+        public List<Position> Positions{ get; set; }
         public List<Publication> PublicationList { get; set; }
         public DateTime start_job { get; set; }
         public Position GetCurrentJob ()
         {
-
+            return Positions.Last ();
         }
-        public string CurrentJobTitle { get { return Position.Last().jobTitle; } }
+        public string CurrentJobTitle { get { return Positions.Last().jobTitle; } }
+
         public DateTime CurrentJobStart()
         {
-
+            return Positions.Last().start;
         }
         public Position GetEarliestJob()
         {
-
+            return Positions.First();
         }
         public DateTime EarliestStart { get; set; }
         
-        public float Tenure{get { return (float)((DateTime.Now - start_job).TotalDays / 365);
+        public float Tenure { get { return (float)((DateTime.Now - start_job).TotalDays / 365); } }
+
         public int PublicationsCount()
         {
-
+            return PublicationList.Count();
         }
     }
 }

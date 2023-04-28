@@ -18,5 +18,7 @@ namespace KIT206Assignment2.Entity
     public class Position
     {
         public EmploymentLevel level { get; set; }
+        public DateTime start { get; set; }
+        public DateTime end { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KIT206Assignment2.Entity
 {
-    enum OutputType
+    public enum OutputType
     {
         Journal,
         Conference,
@@ -18,8 +18,12 @@ namespace KIT206Assignment2.Entity
         public string Title { get; set; }
         public string Authors { get; set; }
         public DateTime Year { get; set; }
-        public DateTime Available { get; set;}
-   
+        public DateTime Available { get; set; }
+        public OutputType type { get; set; }
 
+        public int Age()
+        {
+            return (DateTime.Now - Available).Days;
+        }
     }
 }

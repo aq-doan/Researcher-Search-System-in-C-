@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KIT206Assignment2.Entity
 {
-    internal class Staff
+    public class Staff
     {
     }
 }

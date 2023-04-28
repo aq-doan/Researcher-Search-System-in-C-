@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace KIT206Assignment2.Entity
 {
-    internal class Position
+    public enum EmploymentLevel
     {
+        Student,
+        A,
+        B,
+        C,
+        D,
+        E
+    }
+    public class Position
+    {
+        public EmploymentLevel level { get; set; }
     }
 }

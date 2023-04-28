@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KIT206Assignment2.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace KIT206Assignment2.Control
 
         }
 
-        public void FilterBy(level EmploymentLevel)
+        public void FilterBy(EmploymentLevel level)
         {
 
         }
@@ -23,6 +24,9 @@ namespace KIT206Assignment2.Control
 
         }
 
-        public void LoadRearcher
+        public void LoadRearcherDetails()
+        {
+
+        }
     }
 }

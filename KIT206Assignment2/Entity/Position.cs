@@ -20,5 +20,29 @@ namespace KIT206Assignment2.Entity
         public EmploymentLevel level { get; set; }
         public DateTime start { get; set; }
         public DateTime end { get; set; }
+        public string jobTitle {
+
+            get { return "Dr"; }
+        }
+        public string ToTitle (EmploymentLevel type)
+        {
+            switch (type) { 
+                case EmploymentLevel.Student:
+                    return "Student";
+                case EmploymentLevel.A:
+                    return "Research Associate";
+                case EmploymentLevel.B:
+                    return "Lecturer";
+                case EmploymentLevel.C:
+                    return "Assistant Professor";
+                case EmploymentLevel.D:
+                    return "Associate Professor";
+                case EmploymentLevel.E:
+                    return "Professor";
+                    default:
+                    return "Error Totile() Entity Position.cs";
+            }
+        }
     }
+
 }

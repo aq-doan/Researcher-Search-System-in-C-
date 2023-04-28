@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace KIT206Assignment2.Control
 {
-    internal class ResearcherController
+    public class ResearcherController
     {
+        public void LoadResearcher()
+        {
+
+        }
+
+        public void FilterBy(level EmploymentLevel)
+        {
+
+        }
+
+        public void FilterByName(string name)
+        {
+
+        }
+
+        public void LoadRearcher
     }
 }

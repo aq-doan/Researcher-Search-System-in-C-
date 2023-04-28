@@ -12,29 +12,31 @@ namespace KIT206Assignment2.Control
     {
         public void LoadResearcher()
         {
+            Display();
         }
 
         static List<Researcher> FilterBy(List<Researcher> researcher, EmploymentLevel level)
         {
-            return ;
+            return null;
         }
 
         static List<Researcher> FilterByName(List<Researcher> researcher, string name)
         {
-            return ;
+
+            return null;
         }
 
         public void LoadRearcherDetails()
         {
-            PublicationController p;
-            Researcher r;
+            PublicationController p = new PublicationController();
+            Researcher r = new Researcher();
 
             p.loadPublicationsFor(r);
         }
 
-        public void Display()
+        public string Display()
         {
-
+            return null;
         }
     }
 }

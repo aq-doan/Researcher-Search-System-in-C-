@@ -13,9 +13,9 @@ namespace KIT206Assignment2.Entity
         public string FamilyName { get; set; }
         public string Title { get; set; }
         public string School { get; set; }
-        public string campus { get; set; }
-        public string email { get; set; };
-        public string Photot {get; set; }
+        public string Campus { get; set; }
+        public string Email { get; set; }
+        public string Photo {get; set; }
         public EmploymentLevel Job { get; set; }
 
         public List<Position> Positions{ get; set; }

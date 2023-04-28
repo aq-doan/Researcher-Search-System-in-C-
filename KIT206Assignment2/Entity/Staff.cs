@@ -9,7 +9,7 @@ namespace KIT206Assignment2.Entity
     public class Staff : Researcher
     {
         public List<Position> positions {get; set;}
-        public float requirement
+        /*public float requirement
         {
             get 
             {
@@ -29,11 +29,7 @@ namespace KIT206Assignment2.Entity
                         return 4;
 
                 }
-            }
-        }
-        public float ThreeYearAverage()
-        {
-
+            }*/
         }
     }
-}
+

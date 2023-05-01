@@ -31,23 +31,31 @@ namespace KIT206Assignment2.Control
         }
 
 
-        static List<Researcher> FilterByName(List<Researcher> researcher, string name)
+        public static List<Researcher> FilterByName(string ResearcherName)
         {
+            List<Researcher> researchers = Researchers;
 
-            return null;
+            if (!string.IsNullOrEmpty(ResearcherName))
+            {
+                string query = ResearcherName.ToUpper();
+
+                researchers = researchers
+                    .Where(r => r.GivenName.ToUpper().Contains(query) || r.FamilyName.ToUpper().Contains(query))
+                    .OrderBy(r => r.FamilyName)
+                    .ToList();
+            }
+
+            return researchers;
         }
-
-        public void LoadRearcherDetails()
+        /*
+        //will complete this when adapter is implemented
+        public static void LoadResearcherDetails(object select)
         {
-            PublicationController p = new PublicationController();
-            Researcher r = new Researcher();
+            return null
 
-            p.loadPublicationsFor(r);
-        }
+        }*/
 
-        public string Display()
-        {
-            return null;
-        }
+
     }
 }
+

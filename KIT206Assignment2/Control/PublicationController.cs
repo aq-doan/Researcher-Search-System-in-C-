@@ -11,7 +11,7 @@ namespace KIT206Assignment2.Control
     {
         public void loadPublicationsFor(Researcher r)
         {
-            Console.WriteLine(r);
+            
         }
     }
 }

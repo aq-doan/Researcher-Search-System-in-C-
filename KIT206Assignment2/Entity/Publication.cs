@@ -23,7 +23,9 @@ namespace KIT206Assignment2.Entity
 
         public int Age()
         {
-            return (DateTime.Now - Available).Days;
+            TimeSpan age = DateTime.Now - Available;
+            return (int)age.TotalDays;
         }
+
     }
 }

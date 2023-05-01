@@ -12,51 +12,47 @@ namespace KIT206Assignment2.Entity
         public List<Position> Positions { get; set; }
         public List<String> Supervisions { get; set; }
 
-        private float PublicationRequirement
-        {
-            get
-            {
+        
 
-                switch (Job)
+        public float ThreeYearAverage()
+        {
+            int currentYear = DateTime.Now.Year;
+            int totalPublications = 0;
+
+            foreach (Publication publication in PublicationList)
+            {
+                if (publication.Year.Year >= currentYear - 3)
                 {
-                    case EmploymentLevel.Student:
-                        return 0F;
-                    case EmploymentLevel.A:
-                        return 0.5F;
-                    case EmploymentLevel.B:
-                        return 1F;
-                    case EmploymentLevel.C:
-                        return 2F;
-                    case EmploymentLevel.D:
-                        return 3.2F;
-                    case EmploymentLevel.E:
-                        return 4F;
-                    default:
-                        return 0;
+                    totalPublications++;
                 }
             }
+
+            return (float)totalPublications / 3;
         }
 
-        //TO WORK ON THIS LATER
-
-        public float ThreeYearAverage
+        public float Performance()
         {
-            get
+            float expectedPublications = 0;
+            switch (Job)
             {
-                int count = PublicationList.Count;
-
-
-
-                return (float)(count / 3.0); //TODO
+                case EmploymentLevel.A:
+                    expectedPublications = 0.5F;
+                    break;
+                case EmploymentLevel.B:
+                    expectedPublications = 1F;
+                    break;
+                case EmploymentLevel.C:
+                    expectedPublications = 2F;
+                    break;
+                case EmploymentLevel.D:
+                    expectedPublications = 3.2F;
+                    break;
+                case EmploymentLevel.E:
+                    expectedPublications = 4F;
+                    break;
             }
-        }
 
-        public float Performance
-        {
-            get
-            {
-                return ThreeYearAverage / PublicationRequirement;
-            }
+            return (float)Math.Round(ThreeYearAverage() / expectedPublications * 100, 1);
         }
 
     }

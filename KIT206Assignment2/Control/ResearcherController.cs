@@ -10,15 +10,26 @@ namespace KIT206Assignment2.Control
 {
     public class ResearcherController
     {
-        public void LoadResearcher()
+        public static List<Researcher> Researchers { get; private set; }
+        public static Researcher CurrentResearcher { get; private set; }
+
+        /*public void LoadResearcher()
         {
             Display();
+        }*/
+
+        public static List<Researcher> FilterBy(EmploymentLevel level)
+        {
+            List<Researcher> researchers = Researchers;
+
+            if (level != EmploymentLevel.Other)
+            {
+                researchers = researchers.Where(entry => entry.Job == level).ToList();
+            }
+
+            return researchers.OrderBy(x => x.FamilyName).ToList();
         }
 
-        static List<Researcher> FilterBy(List<Researcher> researcher, EmploymentLevel level)
-        {
-            return null;
-        }
 
         static List<Researcher> FilterByName(List<Researcher> researcher, string name)
         {

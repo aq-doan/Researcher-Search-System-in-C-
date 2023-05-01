@@ -8,56 +8,58 @@ namespace KIT206Assignment2.Entity
 {
     public class Staff : Researcher
     {
-        
-            public List<Position> Positions { get; set; }
-            public List<String> Supervisions { get; set; }
 
-            private float PublicationRequirement
+        public List<Position> Positions { get; set; }
+        public List<String> Supervisions { get; set; }
+
+        private float PublicationRequirement
+        {
+            get
             {
-                get
+
+                switch (Job)
                 {
-                    switch (Job)
-                    {
-                        case EmploymentLevel.Student:
+                    case EmploymentLevel.Student:
                         return 0F;
-                        case EmploymentLevel.A: 
+                    case EmploymentLevel.A:
                         return 0.5F;
-                        case EmploymentLevel.B:
+                    case EmploymentLevel.B:
                         return 1F;
-                        case EmploymentLevel.C: 
+                    case EmploymentLevel.C:
                         return 2F;
-                        case EmploymentLevel.D:
+                    case EmploymentLevel.D:
                         return 3.2F;
-                        case EmploymentLevel.E:
+                    case EmploymentLevel.E:
                         return 4F;
-                        default: 
+                    default:
                         return 0;
-                    }
                 }
             }
-
-            
-            public float ThreeYearAverage
-            {
-                get
-                {
-                    int count = 0;
-                    int currentYear = DateTime.Today.Year;
-
-                    // caculate number of publication from last three year
-                    for (int i = 0; i < PublicationList.Count; i++)
-                    {
-                        if (currentYear - 3 <= PublicationList[i].Year
-                        && PublicationList[i].Year < currentYear)
-                        {
-                            count++;
-                        }
-                    }
-                    return (float)(count / 3.0); //TODO
-                }
-            }
-
-            public float Performance { get { return ThreeYearAverage / PublicationRequirement; } }
         }
-    
+
+        //TO WORK ON THIS LATER
+
+        public float ThreeYearAverage
+        {
+            get
+            {
+                int count = PublicationList.Count;
+
+
+
+                return (float)(count / 3.0); //TODO
+            }
+        }
+
+        public float Performance
+        {
+            get
+            {
+                return ThreeYearAverage / PublicationRequirement;
+            }
+        }
+
+    }
+}
+
 

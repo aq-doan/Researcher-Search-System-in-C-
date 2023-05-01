@@ -13,7 +13,8 @@ namespace KIT206Assignment2.Entity
         B,
         C,
         D,
-        E
+        E,
+        Other
     }
     public class Position
     {

@@ -8,7 +8,7 @@ namespace KIT206Assignment2.Entity
 {
     public class Researcher
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string GivenName { get; set; }
         public string FamilyName { get; set; }
         public string Title { get; set; }

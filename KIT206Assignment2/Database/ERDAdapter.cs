@@ -32,6 +32,7 @@ namespace KIT206Assignment2.Database
             }
             return conn;
         }
+
         public static List<Researcher> FetchBasicResearcherDetails()
         {
             List<Researcher> basic = new List<Researcher>();
@@ -43,29 +44,28 @@ namespace KIT206Assignment2.Database
                 MySqlCommand cmd = new MySqlCommand("select id, given_name, family_name, title, level, email from researcher", conn);              
                 readResearcher = cmd.ExecuteReader();
 
-                while (readResearcher.Read())
+                while (reader.Read())
                 {
-                    if (readResearcher.GetString(4) == "Student")
+                    Researcher researcher;
+                    if (reader.GetString("level") == "Student")
                     {
-                        basic.Add(new Student
-                        {
-                            Id = readResearcher.GetInt32(0),
-                            GivenName = readResearcher.GetString(1),
-                            FamilyName = readResearcher.GetString(2),
-                            Title = readResearcher.GetString(3)
+                        researcher = new Student();
+                    }
+                    else if (reader.GetString("level") == "Staff")
+                    {
+                        researcher = new Staff();
+                    }
+                    else
+                    {
+                        continue;
+                    }
 
-                        });
-                    }
-                    else if (readResearcher.GetString(4) != "Student")
-                    {
-                        basic.Add(new Staff
-                        {
-                            Id = readResearcher.GetInt32(0),
-                            GivenName = readResearcher.GetString(1),
-                            FamilyName = readResearcher.GetString(2),
-                            Title = readResearcher.GetString(3)
-                        });
-                    }
+                    researcher.Id = reader.GetInt32("id");
+                    researcher.GivenName = reader.GetString("given_name");
+                    researcher.FamilyName = reader.GetString("family_name");
+                    researcher.Title = reader.GetString("title");
+
+                    researchers.Add(researcher);
                 }
             }
             catch (MySqlException e)
@@ -74,15 +74,9 @@ namespace KIT206Assignment2.Database
             }
             finally
             {
-                if (readResearcher != null)
-                {
-                    readResearcher.Close();
-                }
-
-                if (conn != null)
-                {
+                readResearcher.Close();
                     conn.Close();
-                }
+                
             }
             return basic;
         }

@@ -74,16 +74,95 @@ namespace KIT206Assignment2.Database
             finally
             {
                 readResearcher.Close();
-                    conn.Close();
-                
+                conn.Close();
+
             }
             return basic;
         }
-    }
-        public static T ParseEnum<T>(string value)
-    {
-        return (T)Enum.Parse(typeof(T), value);
-    }
 
-        
+        public static T ParseEnum<T>(string value)
+        {
+            return (T)Enum.Parse(typeof(T), value);
+        }
+        public static List<Publication> FetchBasicPublicationDetails(Researcher r)
+        {
+            MySqlConnection conn = estConn();
+            MySqlDataReader pubReader = null;
+            List<Publication> fetchBasic = new List<Publication>();
+
+            try
+            {
+                conn.Open();
+
+                MySqlCommand sqlCommand = new MySqlCommand("select pub.doi, title, year from publication as pub, " +
+                                                     "researcher_publication as respub where pub.doi=respub.doi " +
+                                                     "and researcher_id=@id", conn);
+                sqlCommand.Parameters.AddWithValue("@id", r.Id);
+
+                pubReader = sqlCommand.ExecuteReader();
+
+                while (pubReader.Read())
+                {
+                    Publication pub = new Publication();
+                    pub.Title = pubReader.GetString("title");
+                    pub.Year = pubReader.GetInt32("year");
+                    pub.DOI = pubReader.GetString("doi");
+                    fetchBasic.Add(pub);
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine("Error in FetchBasicPublicationDetails: " + e);
+            }
+            finally
+            {
+                if (pubReader != null)
+                {
+                    pubReader.Close();
+                }
+                conn.Close();
+            }
+
+            return fetchBasic;
+        }
+        public static Publication CompletePublicationDetails(Publication completePub)
+        {
+            MySqlConnection conn = estConn();
+            MySqlDataReader completePubReader = null;
+            try
+            {
+                conn.Open();
+
+             
+                MySqlCommand completeCommand = new MySqlCommand("select authors, type, cite_as, available " +
+                                                    "from publication where doi=?doi", conn);
+                completeCommand.Parameters.AddWithValue("doi", completePub.DOI);
+
+
+                completePubReader = completeCommand.ExecuteReader();
+                if (completePubReader.Read())
+                {
+                    completePub.CiteAs = completePubReader.GetString(2);
+                    completePub.Available = completePubReader.GetDateTime(3);
+                    completePub.Authors = completePubReader.GetString(0);
+                    completePub.Type = ParseEnum<OutputType>(completePubReader.GetString(1));
+                    
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine("Error connecting to database: " + e);
+            }
+            finally
+            {
+                    completePubReader.Close();
+                    conn.Close();
+            }
+
+            return completePub;
+        }
+        //missingfetchfullresearcher
+        //missingcompleteResearcherDetail
+        //fetchPublicationcount
+    }
 }

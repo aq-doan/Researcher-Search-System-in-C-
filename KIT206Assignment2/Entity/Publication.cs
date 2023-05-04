@@ -16,6 +16,7 @@ namespace KIT206Assignment2.Entity
     {
         public string DOI { get; set; }
         public string Title { get; set; }
+        public string CiteAs { get; set; }
         public List<string> Authors { get; set; }
         public DateTime Year { get; set; }
         public DateTime Available { get; set; }

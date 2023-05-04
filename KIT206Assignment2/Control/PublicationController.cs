@@ -47,11 +47,11 @@ namespace KIT206Assignment2.Control
             string DOI = pub.DOI;
             string Title = pub.Title;
             string Authors = pub.Authors;
-            DateTime PublicationYear = pub.Year.Year.ToString();
-            OutputType Type = pub.Type.ToString();
-            OutputRanking Ranking = pub.Ranking.ToString();
-            DateTime AvailableDate= pub.Available.ToString("dd/MM/yyyy");
-            int Age= pub.Age().ToString() + " days";
+            string PublicationYear = pub.Year.Year.ToString();
+            string Type = pub.Type.ToString();
+            string Ranking = pub.Ranking.ToString();
+            string AvailableDate= pub.Available.ToString("dd/MM/yyyy");
+            string Age= pub.Age().ToString() + " days";
 
             
         }*/

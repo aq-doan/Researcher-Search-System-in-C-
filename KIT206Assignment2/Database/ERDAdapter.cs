@@ -26,7 +26,6 @@ namespace KIT206Assignment2.Database
         {
             if (conn == null)
             {
-                //Note: This approach is not thread-safe
                 string connectingdb = String.Format("Database={0};Data Source={1};User Id={2};Password={3}", db, server, user, pass);
                 conn = new MySqlConnection(connectingdb);
             }

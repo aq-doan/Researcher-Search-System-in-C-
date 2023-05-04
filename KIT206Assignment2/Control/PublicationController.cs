@@ -1,4 +1,5 @@
-﻿using KIT206Assignment2.Entity;
+﻿using KIT206Assignment2.Database;
+using KIT206Assignment2.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,28 @@ using System.Threading.Tasks;
 
 namespace KIT206Assignment2.Control
 {
-    public class PublicationController
+    public static class PublicationController
     {
-        public void loadPublicationsFor(Researcher r)
+        private static List<Publication> publications;
+        public static bool LoadAllPublications()
         {
-            
+            publications = ERDAdapter.LoadAll();
+            if (publications != null)
+            {
+                return true;
+            }
+            return false;
         }
+        public Publication[] LoadPublicationsFor(Researcher r)
+        {
+            var pubsForResearcher = from pub in publications
+                                    where pub.Authors.Contains(r.Name)
+                                    select pub;
+
+            return pubsForResearcher.ToArray();
+        }
+
+        //Sort by year
+
     }
 }

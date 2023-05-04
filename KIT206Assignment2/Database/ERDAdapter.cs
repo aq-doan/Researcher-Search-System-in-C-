@@ -21,7 +21,7 @@ namespace KIT206Assignment2.Database
 
         private static MySqlConnection conn = null;
 
-        
+
         private static MySqlConnection estConn()
         {
             if (conn == null)
@@ -40,7 +40,7 @@ namespace KIT206Assignment2.Database
             try
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select id, given_name, family_name, title, level, email from researcher", conn);              
+                MySqlCommand cmd = new MySqlCommand("select id, given_name, family_name, title, level, email from researcher", conn);
                 readResearcher = cmd.ExecuteReader();
 
                 while (readResearcher.Read())
@@ -56,7 +56,7 @@ namespace KIT206Assignment2.Database
 
                         });
                     }
-                    else if (readResearcher.GetString(4) != "Student")
+                    else if (readResearcher.GetString(4) != "Staff")
                     {
                         basic.Add(new Staff
                         {
@@ -86,5 +86,14 @@ namespace KIT206Assignment2.Database
             }
             return basic;
         }
+    }
+        public static T ParseEnum<T>(string value)
+    {
+        return (T)Enum.Parse(typeof(T), value);
+    }
+
+        public static Researcher FetchFullResearcherDetails(int id)
+    {
+        MySql
     }
 }

@@ -16,7 +16,7 @@ namespace KIT206Assignment2.Entity
     {
         public string DOI { get; set; }
         public string Title { get; set; }
-        public string Authors { get; set; }
+        public List<string> Authors { get; set; }
         public DateTime Year { get; set; }
         public DateTime Available { get; set; }
         public OutputType Type { get; set; }
@@ -24,7 +24,11 @@ namespace KIT206Assignment2.Entity
 
         public Publication()
         {
-            AuthorNames = new List<string>();
+            Authors = new List<string>();
+        }
+        public void AddAuthorName(string authorName)
+        {
+            Authors.Add(authorName);
         }
         public int Age()
         {
@@ -37,6 +41,10 @@ namespace KIT206Assignment2.Entity
             Q2,
             Q3,
             Q4
+        }
+        public override string ToString()
+        {
+            return DOI + " - " + Title + " - " + Authors[0] + " et. al";
         }
     }
 }

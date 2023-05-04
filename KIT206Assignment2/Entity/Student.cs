@@ -9,5 +9,6 @@ namespace KIT206Assignment2.Entity
     public class Student: Researcher
     {
         public string Degree { get; set; }
+        public string SupervisorName { get; set; }
     }
 }

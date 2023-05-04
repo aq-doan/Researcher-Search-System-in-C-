@@ -43,14 +43,14 @@ namespace KIT206Assignment2.Database
                 MySqlCommand cmd = new MySqlCommand("select id, given_name, family_name, title, level, email from researcher", conn);
                 readResearcher = cmd.ExecuteReader();
 
-                while (reader.Read())
+                while (readResearcher.Read())
                 {
                     Researcher researcher;
-                    if (reader.GetString("level") == "Student")
+                    if (readResearcher.GetString("level") == "Student")
                     {
                         researcher = new Student();
                     }
-                    else if (reader.GetString("level") == "Staff")
+                    else if (readResearcher.GetString("level") == "Staff")
                     {
                         researcher = new Staff();
                     }
@@ -59,12 +59,12 @@ namespace KIT206Assignment2.Database
                         continue;
                     }
 
-                    researcher.Id = reader.GetInt32("id");
-                    researcher.GivenName = reader.GetString("given_name");
-                    researcher.FamilyName = reader.GetString("family_name");
-                    researcher.Title = reader.GetString("title");
+                    researcher.Id = readResearcher.GetInt32("id");
+                    researcher.GivenName = readResearcher.GetString("given_name");
+                    researcher.FamilyName = readResearcher.GetString("family_name");
+                    researcher.Title = readResearcher.GetString("title");
 
-                    researchers.Add(researcher);
+                    basic.Add(researcher);
                 }
             }
             catch (MySqlException e)
@@ -85,8 +85,5 @@ namespace KIT206Assignment2.Database
         return (T)Enum.Parse(typeof(T), value);
     }
 
-        public static Researcher FetchFullResearcherDetails(int id)
-    {
-        MySql
-    }
+        
 }

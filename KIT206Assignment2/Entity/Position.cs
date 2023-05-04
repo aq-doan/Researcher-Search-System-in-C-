@@ -44,9 +44,10 @@ namespace KIT206Assignment2.Entity
                 }
             }
         }
-        public string ToTitle (EmploymentLevel type)
+        public string ToTitle(EmploymentLevel type)
         {
-            switch (type) { 
+            switch (type)
+            {
                 case EmploymentLevel.Student:
                     return "Student";
                 case EmploymentLevel.A:
@@ -59,8 +60,8 @@ namespace KIT206Assignment2.Entity
                     return "Associate Professor";
                 case EmploymentLevel.E:
                     return "Professor";
-                    default:
-                    return "Error Totile() Entity Position.cs";
+                default:
+                    throw new ArgumentException("Invalid employment level.");
             }
         }
     }

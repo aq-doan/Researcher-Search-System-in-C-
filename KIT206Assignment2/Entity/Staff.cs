@@ -54,7 +54,41 @@ namespace KIT206Assignment2.Entity
 
             return (float)Math.Round(ThreeYearAverage() / expectedPublications * 100, 1);
         }
+        public float Q1Percentage()
+        {
+            int totalPublications = PublicationList.Count;
+            int q1Publications = 0;
 
+            foreach (Publication publication in PublicationList)
+            {
+                if (publication.Ranking == Publication.OutputRanking.Q1)
+                {
+                    q1Publications++;
+                }
+            }
+
+            if (totalPublications == 0)
+            {
+                return 0;
+            }
+
+            float percentage = ((float)q1Publications / totalPublications) * 100;
+
+            return (float)Math.Round(percentage, 2);
+        }
+        public float PerformanceByPublication()
+        {
+            if (DateTime.Now.Year - Tenure() < 1)
+            {
+                return 0;
+            }
+
+            int totalPublications = PublicationList.Count;
+            float performance = (float)totalPublications / (DateTime.Now.Year - Tenure());
+
+            return (float)Math.Round(performance, 2);
+        }
+        //missing performance by funding
     }
 }
 

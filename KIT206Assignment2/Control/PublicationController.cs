@@ -11,6 +11,7 @@ namespace KIT206Assignment2.Control
     public static class PublicationController
     {
         private static List<Publication> publications;
+        private static List<Publication> CurrentList = new List<Publication>();
         public static bool LoadAllPublications()
         {
             publications = ERDAdapter.LoadAll();
@@ -30,6 +31,29 @@ namespace KIT206Assignment2.Control
         }
 
         //Sort by year
+        public List<Publication> FilterByYear(int year_min, int year_max)
+        {
+            var list_after = from pub in publications
+                           where pub.Year.Year >= year_min && pub.Year.Year <= year_max
+                           select pub;
+            CurrentList = new List<Publication>(list_after);
+            return CurrentList;
+        }
 
+        /* public void LoadPublicationDetails(Publication publication)
+        {
+            Publication pub = Database.ERDAdapter.fetchFullPublicationDetails(publication);
+
+            string DOI = pub.DOI;
+            string Title = pub.Title;
+            string Authors = pub.Authors;
+            DateTime PublicationYear = pub.Year.Year.ToString();
+            OutputType Type = pub.Type.ToString();
+            OutputRanking Ranking = pub.Ranking.ToString();
+            DateTime AvailableDate= pub.Available.ToString("dd/MM/yyyy");
+            int Age= pub.Age().ToString() + " days";
+
+            
+        }*/
     }
 }

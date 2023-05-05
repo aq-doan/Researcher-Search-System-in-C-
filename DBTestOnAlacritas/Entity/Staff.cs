@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KIT206Assignment2.Entity
+namespace DBTestOnAlacritas.Entity
 {
     public class Staff : Researcher
     {
@@ -12,7 +12,7 @@ namespace KIT206Assignment2.Entity
         public List<Position> Positions { get; set; }
         public List<String> Supervisions { get; set; }
 
-        
+
 
         public float ThreeYearAverage()
         {

@@ -1,23 +1,23 @@
-﻿using KIT206Assignment2.Entity;
+﻿using DBTestOnAlacritas.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using KIT206Assignment2.Database;
-namespace KIT206Assignment2.Control
+using DBTestOnAlacritas.Database;
+namespace DBTestOnAlacritas.Control
 {
     public class ResearcherController
     {
         public static List<Researcher> Researchers { get; private set; }
         public static Researcher CurrentResearcher { get; private set; }
-
+        /*
         public void LoadResearcher()
         {
             Researchers = ERDAdapter.FetchBasicResearcherDetails();
         }
-
+        */
         public static List<Researcher> FilterBy(EmploymentLevel level)
         {
             List<Researcher> researchers = Researchers;
@@ -47,12 +47,12 @@ namespace KIT206Assignment2.Control
 
             return researchers;
         }
-      /*
-        public static void LoadResearcherDetails(Researcher r)
-        {
-            return null
+        /*
+          public static void LoadResearcherDetails(Researcher r)
+          {
+              return null
 
-        }*/
+          }*/
 
 
     }

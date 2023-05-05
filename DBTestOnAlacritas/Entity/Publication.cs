@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KIT206Assignment2.Entity
+namespace DBTestOnAlacritas.Entity
 {
     public enum OutputType
     {

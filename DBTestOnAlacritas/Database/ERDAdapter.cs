@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
 using MySql.Data.MySqlClient;
-using KIT206Assignment2.Entity;
+using DBTestOnAlacritas.Entity;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.ComponentModel;
@@ -12,9 +12,9 @@ using System.Xml;
 using System.Xml.Linq;
 
 
-namespace KIT206Assignment2.Database
+namespace DBTestOnAlacritas.Database
 {
-    public static class ERDAdapter
+    public  class ERDAdapter
     {
         private const string db = "kit206";
         private const string user = "kit206";
@@ -26,15 +26,15 @@ namespace KIT206Assignment2.Database
 
         private static MySqlConnection estConn()
         {
-            
-            
-                string connectingdb = String.Format("Database={0};Data Source={1};User Id={2};Password={3}", db, server, user, pass);
-                conn = new MySqlConnection(connectingdb);
-            
+
+
+            string connectingdb = String.Format("Database={0};Data Source={1};User Id={2};Password={3}", db, server, user, pass);
+            conn = new MySqlConnection(connectingdb);
+
             return conn;
         }
 
-        public static List<Researcher> FetchBasicResearcherDetails()
+        public  List<Researcher> FetchBasicResearcherDetails()
         {
             List<Researcher> basic = new List<Researcher>();
             MySqlConnection conn = estConn();
@@ -47,7 +47,8 @@ namespace KIT206Assignment2.Database
 
                 while (readResearcher.Read())
                 {
-                    Researcher researcher;
+                    Researcher researcher = new Staff();
+                    /*
                     if (readResearcher.GetString("level") == "Student")
                     {
                         researcher = new Student();
@@ -59,15 +60,15 @@ namespace KIT206Assignment2.Database
                     else
                     {
                         continue;
-                    }
+                    }*/
 
-                    researcher.Id = readResearcher.GetInt32("id");
-                    researcher.GivenName = readResearcher.GetString("given_name");
-                    researcher.FamilyName = readResearcher.GetString("family_name");
-                    researcher.Title = readResearcher.GetString("title");
+                    Console.WriteLine(researcher.Id = readResearcher.GetInt32("id"));
+                    Console.WriteLine(researcher.GivenName = readResearcher.GetString("given_name"));
+                    Console.WriteLine(researcher.FamilyName = readResearcher.GetString("family_name"));
+                    Console.WriteLine(researcher.Title = readResearcher.GetString("title"));
 
                     basic.Add(researcher);
-                    Console.WriteLine(researcher);
+                    Console.WriteLine();
                 }
             }
             catch (MySqlException e)
@@ -136,7 +137,7 @@ namespace KIT206Assignment2.Database
             {
                 conn.Open();
 
-             
+
                 MySqlCommand completeCommand = new MySqlCommand("select authors, type, cite_as, available " +
                                                     "from publication where doi=?doi", conn);
                 completeCommand.Parameters.AddWithValue("doi", completePub.DOI);
@@ -147,9 +148,9 @@ namespace KIT206Assignment2.Database
                 {
                     completePub.CiteAs = completePubReader.GetString(2);
                     completePub.Available = completePubReader.GetDateTime(3);
-                   // completePub.Authors = completePubReader.GetString(0);
+                    // completePub.Authors = completePubReader.GetString(0);
                     completePub.Type = ParseEnum<OutputType>(completePubReader.GetString(1));
-                    
+
                 }
                 Console.WriteLine(completePub);
             }
@@ -159,8 +160,8 @@ namespace KIT206Assignment2.Database
             }
             finally
             {
-                    completePubReader.Close();
-                    conn.Close();
+                completePubReader.Close();
+                conn.Close();
             }
 
             return completePub;

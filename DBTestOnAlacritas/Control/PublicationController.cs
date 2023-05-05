@@ -1,12 +1,12 @@
-﻿using KIT206Assignment2.Database;
-using KIT206Assignment2.Entity;
+﻿using DBTestOnAlacritas.Database;
+using DBTestOnAlacritas.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KIT206Assignment2.Control
+namespace DBTestOnAlacritas.Control
 {
     public static class PublicationController
     {
@@ -36,8 +36,8 @@ namespace KIT206Assignment2.Control
         public static List<Publication> FilterByYear(int year_min, int year_max)
         {
             var list_after = from pub in publications
-                           where pub.Year.Year >= year_min && pub.Year.Year <= year_max
-                           select pub;
+                             where pub.Year.Year >= year_min && pub.Year.Year <= year_max
+                             select pub;
             CurrentList = new List<Publication>(list_after);
             return CurrentList;
         }

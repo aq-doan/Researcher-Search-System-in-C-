@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KIT206Assignment2.Entity
+namespace DBTestOnAlacritas.Entity
 {
-    public class Student: Researcher
+    public class Student : Researcher
     {
         public string Degree { get; set; }
         public string SupervisorName { get; set; }

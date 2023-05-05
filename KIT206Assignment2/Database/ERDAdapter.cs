@@ -26,11 +26,11 @@ namespace KIT206Assignment2.Database
 
         private static MySqlConnection estConn()
         {
-            if (conn == null)
-            {
+            
+            
                 string connectingdb = String.Format("Database={0};Data Source={1};User Id={2};Password={3}", db, server, user, pass);
                 conn = new MySqlConnection(connectingdb);
-            }
+            
             return conn;
         }
 
@@ -67,6 +67,7 @@ namespace KIT206Assignment2.Database
                     researcher.Title = readResearcher.GetString("title");
 
                     basic.Add(researcher);
+                    Console.WriteLine(researcher);
                 }
             }
             catch (MySqlException e)
@@ -150,6 +151,7 @@ namespace KIT206Assignment2.Database
                     completePub.Type = ParseEnum<OutputType>(completePubReader.GetString(1));
                     
                 }
+                Console.WriteLine(completePub);
             }
             catch (MySqlException e)
             {

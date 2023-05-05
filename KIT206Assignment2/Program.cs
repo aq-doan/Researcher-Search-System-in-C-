@@ -8,7 +8,7 @@ namespace Program
     {
         static void Main()
         {
-            Researcher r = new Researcher {id = 1, GivenName = "Jane", FamilyName = "Green", Title = "teacher", School = "University", Campus = "highway", Email = "111@gmail.com", Photo = "hello.com"};
+            Researcher r = new Researcher {Id = 1, GivenName = "Jane", FamilyName = "Green", Title = "teacher", School = "University", Campus = "highway", Email = "111@gmail.com", Photo = "hello.com"};
 
             Console.WriteLine(r);
         }

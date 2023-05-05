@@ -10,6 +10,7 @@ namespace KIT206Assignment2.Control
 {
     public static class PublicationController
     {
+        //
         private static List<Publication> publications;
         private static List<Publication> CurrentList = new List<Publication>();
         public static bool LoadAllPublications()

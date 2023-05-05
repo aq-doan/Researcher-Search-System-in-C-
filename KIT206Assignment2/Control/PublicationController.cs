@@ -15,7 +15,8 @@ namespace KIT206Assignment2.Control
         private static List<Publication> CurrentList = new List<Publication>();
         public static bool LoadAllPublications()
         {
-            publications = ERDAdapter.FetchBasicPublicationDetails();
+            Researcher r = new Researcher();
+            publications = ERDAdapter.FetchBasicPublicationDetails(r);
             if (publications != null)
             {
                 return true;

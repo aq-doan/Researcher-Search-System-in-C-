@@ -76,6 +76,7 @@ namespace KIT206Assignment2.Entity
 
             return (float)Math.Round(percentage, 2);
         }
+        /*
         public float PerformanceByPublication()
         {
             if (DateTime.Now.Year - Tenure() < 1)
@@ -87,7 +88,7 @@ namespace KIT206Assignment2.Entity
             float performance = (float)totalPublications / (DateTime.Now.Year - Tenure());
 
             return (float)Math.Round(performance, 2);
-        }
+        }*/
         //missing performance by funding
     }
 }

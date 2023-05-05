@@ -105,7 +105,7 @@ namespace KIT206Assignment2.Database
                 {
                     Publication pub = new Publication();
                     pub.Title = pubReader.GetString("title");
-                    pub.Year = pubReader.GetInt32("year");
+                    pub.Year = pubReader.GetDateTime("year");
                     pub.DOI = pubReader.GetString("doi");
                     fetchBasic.Add(pub);
                 }
@@ -144,7 +144,7 @@ namespace KIT206Assignment2.Database
                 {
                     completePub.CiteAs = completePubReader.GetString(2);
                     completePub.Available = completePubReader.GetDateTime(3);
-                    completePub.Authors = completePubReader.GetString(0);
+                   // completePub.Authors = completePubReader.GetString(0);
                     completePub.Type = ParseEnum<OutputType>(completePubReader.GetString(1));
                     
                 }

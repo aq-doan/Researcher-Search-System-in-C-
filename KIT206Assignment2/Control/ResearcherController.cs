@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
+using KIT206Assignment2.Database;
 namespace KIT206Assignment2.Control
 {
     public class ResearcherController
@@ -13,10 +13,10 @@ namespace KIT206Assignment2.Control
         public static List<Researcher> Researchers { get; private set; }
         public static Researcher CurrentResearcher { get; private set; }
 
-        /*public void LoadResearcher()
+        public void LoadResearcher()
         {
-            Display();
-        }*/
+            Researchers = ERDAdapter.FetchBasicResearcherDetails();
+        }
 
         public static List<Researcher> FilterBy(EmploymentLevel level)
         {
@@ -47,7 +47,7 @@ namespace KIT206Assignment2.Control
 
             return researchers;
         }
-       
+      /*
         public static void LoadResearcherDetails(Researcher r)
         {
             return null

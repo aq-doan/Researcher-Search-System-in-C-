@@ -1,4 +1,5 @@
-﻿using KIT206Assignment2.Entity;
+﻿using KIT206Assignment2.Control;
+using KIT206Assignment2.Entity;
 using System;
 using System.Reflection;
 
@@ -6,11 +7,22 @@ namespace Program
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            Researcher r = new Researcher {Id = 1, GivenName = "Jane", FamilyName = "Green", Title = "teacher", School = "University", Campus = "highway", Email = "111@gmail.com", Photo = "hello.com"};
 
-            Console.WriteLine(r);
+            DemoSearchByLINQOnly();
+            //  DemoInMemorySearch();
+
+        }
+
+        private static void DemoSearchByLINQOnly()
+        {
+            
+
+            bool filteredPublications = PublicationController.LoadAllPublications();
+            //   filteredPublications = PublicationController.SearchByResearcherUsingLINQ("Bruce Banner");
+
+            
         }
     }
 }

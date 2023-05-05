@@ -56,6 +56,12 @@ namespace KIT206Assignment2.Control
             string Age= pub.Age().ToString() + " days";
 
             
-        }*/
+        }
+
+        public static List<Publication> SearchByResearcherUsingLINQ(Researcher researcher)
+        {
+            return ERDAdapter.SearchByAuthor(researcher.Name);
+        }
+        */
     }
 }

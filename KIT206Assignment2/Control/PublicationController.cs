@@ -14,24 +14,24 @@ namespace KIT206Assignment2.Control
         private static List<Publication> CurrentList = new List<Publication>();
         public static bool LoadAllPublications()
         {
-            publications = ERDAdapter.LoadAll();
+            publications = ERDAdapter.FetchBasicPublicationDetails();
             if (publications != null)
             {
                 return true;
             }
             return false;
         }
-        public Publication[] LoadPublicationsFor(Researcher r)
+        public static Publication[] LoadPublicationsFor(Researcher r)
         {
             var pubsForResearcher = from pub in publications
-                                    where pub.Authors.Contains(r.Name)
+                                    where pub.Authors.Contains(r.GivenName)
                                     select pub;
 
             return pubsForResearcher.ToArray();
         }
 
         //Sort by year
-        public List<Publication> FilterByYear(int year_min, int year_max)
+        public static List<Publication> FilterByYear(int year_min, int year_max)
         {
             var list_after = from pub in publications
                            where pub.Year.Year >= year_min && pub.Year.Year <= year_max

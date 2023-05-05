@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\Downloads\DBTestOnAlacritas (1)\DBTestOnAlacritas\DBTestOnAlacritas\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -47,9 +47,8 @@ namespace KIT206Assignment2.Control
 
             return researchers;
         }
-        /*
-        //will complete this when adapter is implemented
-        public static void LoadResearcherDetails(object select)
+       
+        public static void LoadResearcherDetails(Researcher r)
         {
             return null
 

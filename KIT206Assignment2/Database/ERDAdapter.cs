@@ -8,6 +8,8 @@ using KIT206Assignment2.Entity;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.ComponentModel;
+using System.Xml;
+using System.Xml.Linq;
 
 
 namespace KIT206Assignment2.Database

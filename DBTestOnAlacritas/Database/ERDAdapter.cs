@@ -235,7 +235,7 @@ namespace DBTestOnAlacritas.Database
                 {
                     completePub.CiteAs = completePubReader.GetString(2);
                     completePub.Available = completePubReader.GetDateTime(3);
-                    // completePub.Authors = completePubReader.GetString(0);
+                   // completePub.Authors = completePubReader.GetString(0);
                     completePub.Type = ParseEnum<OutputType>(completePubReader.GetString(1));
 
                 }
@@ -253,8 +253,27 @@ namespace DBTestOnAlacritas.Database
 
             return completePub;
         }
-        //missingfetchfullresearcher
-        //missingcompleteResearcherDetail
-        //fetchPublicationcount
+        public static int FetchPublicationCounts(DateTime from, DateTime to)
+        {
+            int publicationCount = 0;
+            MySqlConnection conn = estConn();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM publication WHERE year >= @from AND year <= @to", conn);
+                cmd.Parameters.AddWithValue("@from", from.Year);
+                cmd.Parameters.AddWithValue("@to", to.Year);
+                publicationCount = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine("Error in FetchPublicationCounts: " + e);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return publicationCount;
+        }
     }
 }

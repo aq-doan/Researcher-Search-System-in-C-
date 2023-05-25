@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Projects>
+	<Project id="11J2019">
+		<Funding>120000</Funding>
+		<Year>2019</Year>
+		<Researchers>
+			<staff_id>123460</staff_id>
+			<staff_id>123465</staff_id>
+		</Researchers>
+	</Project>
+	<Project id="16F2021">
+		<Funding>5000</Funding>
+		<Year>2021</Year>
+		<Researchers>
+			<staff_id>123464</staff_id>
+			<staff_id>123463</staff_id>
+		</Researchers>
+	</Project>
+	<Project id="67A2017">
+		<Funding>55000</Funding>
+		<Year>2017</Year>
+		<Researchers>
+			<staff_id>123463</staff_id>
+			<staff_id>123461</staff_id>
+		</Researchers>
+	</Project>
+	<Project id="88S2019">
+		<Funding>190000</Funding>
+		<Year>2019</Year>
+		<Researchers>
+			<staff_id>123461</staff_id>
+			<staff_id>123460</staff_id>
+		</Researchers>
+	</Project>
+	<Project id="52J2022">
+		<Funding>120000</Funding>
+		<Year>2022</Year>
+		<Researchers>
+			<staff_id>123465</staff_id>
+			<staff_id>123460</staff_id>
+			<staff_id>123463</staff_id>
+		</Researchers>
+	</Project>
+	<Project id="06M2023">
+		<Funding>68000</Funding>
+		<Year>2023</Year>
+		<Researchers>
+			<staff_id>123460</staff_id>
+			<staff_id>123462</staff_id>
+		</Researchers>
+	</Project>
+</Projects>

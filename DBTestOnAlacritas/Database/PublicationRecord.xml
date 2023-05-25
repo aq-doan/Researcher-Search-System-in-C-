@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Publications>
+	<Publication id="143256">
+		<Title>ChatGPT and rise of the machines</Title>
+		<Author>Peter Parker</Author>
+		<Author>Bruce Banner</Author>
+		<Author>Sarah Connor</Author>
+		<Type>Conference</Type>
+		<Year>2022</Year>
+		<AvailableFrom>03/03/2023</AvailableFrom>
+		<Ranking>Q1</Ranking>
+	</Publication>
+	<Publication id="172366">
+		<Title>Blockchain and the age of digital currency</Title>
+		<Author>Satoshi Nakamoto</Author>
+		<Author>Victoria Shade</Author>
+		<Author>Sarah Connor</Author>
+		<Type>Journal</Type>
+		<Year>2009</Year>
+		<AvailableFrom>12/07/2010</AvailableFrom>
+		<Ranking>Q2</Ranking>
+	</Publication>
+	<Publication id="298364">
+		<Title>Jarvis - the rule based decision support system</Title>
+		<Author>Bruce Banner</Author>
+		<Author>Tony Stark</Author>
+		<Author>Pepper Potts</Author>
+		<Type>Workshop</Type>
+		<Year>2013</Year>
+		<AvailableFrom>09/05/2014</AvailableFrom>
+		<Ranking>Q3</Ranking>
+	</Publication>
+</Publications>

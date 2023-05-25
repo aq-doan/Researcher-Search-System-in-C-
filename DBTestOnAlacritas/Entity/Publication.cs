@@ -18,7 +18,7 @@ namespace DBTestOnAlacritas.Entity
         public string Title { get; set; }
         public string CiteAs { get; set; }
         public List<string> Authors { get; set; }
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
         public DateTime Available { get; set; }
         public OutputType Type { get; set; }
         public OutputRanking Ranking { get; set; }
@@ -31,10 +31,17 @@ namespace DBTestOnAlacritas.Entity
         {
             Authors.Add(authorName);
         }
+        public int AgePub
+        {
+            get
+            {
+                return Age();
+            }
+        }
         public int Age()
         {
-            TimeSpan age = DateTime.Now - Available;
-            return (int)age.TotalDays;
+            int result = DateTime.Now.Year - Year;
+            return result;
         }
         public enum OutputRanking
         {

@@ -11,57 +11,66 @@ namespace DBTestOnAlacritas.Control
     public static class PublicationController
     {
         //
-        private static List<Publication> publications;
-        private static List<Publication> CurrentList = new List<Publication>();
-        public static bool LoadAllPublications()
+
+        public static Publication pub { get; set; }
+        public static List<Publication> loadedList { get; set; }
+        public static List<Publication> filtered { get; set; }
+        
+        public static void DisplayPublicationDetails()
         {
-            Researcher r = new Researcher();
-            publications = ERDAdapter.FetchBasicPublicationDetails(r);
-            if (publications != null)
+            Console.WriteLine("doi: " + pub.DOI);
+            Console.WriteLine("title: " + pub.Title);
+            Console.WriteLine("ranking: " + pub.Ranking.ToString());
+            Console.WriteLine("authors: " + pub.Authors);
+            Console.WriteLine("publication year: " + pub.Year.ToString());
+            Console.WriteLine("publication type: " + pub.Type.ToString());
+            Console.WriteLine("cite: " + pub.CiteAs);
+            Console.WriteLine("available date: " + pub.Available.ToString());
+        }
+        public static List<Publication> LoadByYear(int start, int end)
+        {
+            var filtered = from Publication pub in loadedList
+                           where pub.Year >= start && pub.Year <= end
+                           select pub;
+
+            List<Publication> filteredList = new List<Publication>(filtered);
+            filteredList.Sort((pub1, pub2) => pub1.Title.CompareTo(pub2.Title));
+
+            return filteredList;
+        }
+
+        public static List<Publication> LoadPublicationList(Researcher researcher)
+        {
+            List<Publication> loadedList = ERDAdapter.FetchBasicPublicationDetails(researcher);
+
+            List<Publication> filtered = new List<Publication>(loadedList);
+            filtered.Sort((pub1, pub2) => pub1.Title.CompareTo(pub2.Title));
+
+            return new List<Publication>(filtered);
+        }
+        public static void LoadPubDetails(string doi)
+        {
+            Publication pub = loadedList.FirstOrDefault(p => p.DOI == doi);
+            if (pub != null)
             {
-                return true;
+                pub = ERDAdapter.CompletePublicationDetails(pub);
             }
-            return false;
         }
-        public static Publication[] LoadPublicationsFor(Researcher r)
+        public static List<Publication> reversePubList()
         {
-            var pubsForResearcher = from pub in publications
-                                    where pub.Authors.Contains(r.GivenName)
-                                    select pub;
+            filtered.Reverse();
 
-            return pubsForResearcher.ToArray();
+            return new List<Publication>(filtered);
         }
 
-        //Sort by year
-        public static List<Publication> FilterByYear(int year_min, int year_max)
+        public static void display()
         {
-            var list_after = from pub in publications
-                             where pub.Year.Year >= year_min && pub.Year.Year <= year_max
-                             select pub;
-            CurrentList = new List<Publication>(list_after);
-            return CurrentList;
+            foreach (Publication pub in filtered)
+
+            {
+                Console.WriteLine("\tTitle: " + pub.Title + " Year: " + pub.Year);
+            }
+
         }
-
-        /* public void LoadPublicationDetails(Publication publication)
-        {
-            Publication pub = Database.ERDAdapter.fetchFullPublicationDetails(publication);
-
-            string DOI = pub.DOI;
-            string Title = pub.Title;
-            string Authors = pub.Authors;
-            string PublicationYear = pub.Year.Year.ToString();
-            string Type = pub.Type.ToString();
-            string Ranking = pub.Ranking.ToString();
-            string AvailableDate= pub.Available.ToString("dd/MM/yyyy");
-            string Age= pub.Age().ToString() + " days";
-
-            
-        }
-
-        public static List<Publication> SearchByResearcherUsingLINQ(Researcher researcher)
-        {
-            return ERDAdapter.SearchByAuthor(researcher.Name);
-        }
-        */
     }
 }

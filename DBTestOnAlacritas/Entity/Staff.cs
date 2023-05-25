@@ -21,7 +21,7 @@ namespace DBTestOnAlacritas.Entity
 
             foreach (Publication publication in PublicationList)
             {
-                if (publication.Year.Year >= currentYear - 3)
+                if (publication.Year >= currentYear - 3)
                 {
                     totalPublications++;
                 }

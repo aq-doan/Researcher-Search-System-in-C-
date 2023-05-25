@@ -196,7 +196,7 @@ namespace DBTestOnAlacritas.Database
                 {
                     Publication pub = new Publication();
                     pub.Title = pubReader.GetString("title");
-                    pub.Year = pubReader.GetDateTime("year");
+                    pub.Year = pubReader.GetInt32("year");
                     pub.DOI = pubReader.GetString("doi");
                     fetchBasic.Add(pub);
                 }

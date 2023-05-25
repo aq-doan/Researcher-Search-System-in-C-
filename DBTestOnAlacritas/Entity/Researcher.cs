@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace DBTestOnAlacritas.Entity
 {
+    public enum ResearcherType { Staff, Student, EnumCount }
     public class Researcher
     {
         public int Id { get; set; }
+        public ResearcherType Type { get; set; }
         public string GivenName { get; set; }
         public string FamilyName { get; set; }
         public string Title { get; set; }

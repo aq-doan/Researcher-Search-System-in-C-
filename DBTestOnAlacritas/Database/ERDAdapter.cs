@@ -42,33 +42,40 @@ namespace DBTestOnAlacritas.Database
             try
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select id, given_name, family_name, title, level, email from researcher", conn);
+                MySqlCommand cmd = new MySqlCommand("select id, given_name, family_name, title, level, supervisor_id from researcher", conn);
                 readResearcher = cmd.ExecuteReader();
 
                 while (readResearcher.Read())
                 {
-                    Researcher researcher = new Staff();
-                    /*
-                    if (readResearcher.GetString("level") == "Student")
+                    EmploymentLevel lvl = !readResearcher.IsDBNull(4) ? ParseEnum<EmploymentLevel>(readResearcher.GetString(4)) : EmploymentLevel.Student;
+                    Boolean trueFalse = (lvl == EmploymentLevel.Student);
+                    if (trueFalse)
                     {
-                        researcher = new Student();
-                    }
-                    else if (readResearcher.GetString("level") == "Staff")
-                    {
-                        researcher = new Staff();
-                    }
-                    else
-                    {
-                        continue;
-                    }*/
+                        basic.Add(new Student
+                        {
+                            Id = readResearcher.GetInt32("id"),
+                            GivenName = readResearcher.GetString("given_name"),
+                            FamilyName = readResearcher.GetString("family_name"),
+                            Title = readResearcher.GetString("title"),
+                            Job = lvl,
+                            SupervisorName = readResearcher.GetInt32("supervisor_id")
 
-                    Console.WriteLine(researcher.Id = readResearcher.GetInt32("id"));
-                    Console.WriteLine(researcher.GivenName = readResearcher.GetString("given_name"));
-                    Console.WriteLine(researcher.FamilyName = readResearcher.GetString("family_name"));
-                    Console.WriteLine(researcher.Title = readResearcher.GetString("title"));
+                        }
+                       ); 
 
-                    basic.Add(researcher);
-                    Console.WriteLine();
+                    } else
+                    {
+                        basic.Add(new Staff
+                        {
+                            Id = readResearcher.GetInt32("id"),
+                            GivenName = readResearcher.GetString("given_name"),
+                            FamilyName = readResearcher.GetString("family_name"),
+                            Title = readResearcher.GetString("title"),
+                            Job = lvl,
+                            
+                        }
+                        );
+                    }
                 }
             }
             catch (MySqlException e)
@@ -83,7 +90,10 @@ namespace DBTestOnAlacritas.Database
             }
             return basic;
         }
-
+        public static Researcher FetchFullResearchDetail(int id)
+        {
+            Researcher full = null; 
+        }
         public static T ParseEnum<T>(string value)
         {
             return (T)Enum.Parse(typeof(T), value);

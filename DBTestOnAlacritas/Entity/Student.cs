@@ -9,6 +9,6 @@ namespace DBTestOnAlacritas.Entity
     public class Student : Researcher
     {
         public string Degree { get; set; }
-        public string SupervisorName { get; set; }
+        public int SupervisorName { get; set; }
     }
 }

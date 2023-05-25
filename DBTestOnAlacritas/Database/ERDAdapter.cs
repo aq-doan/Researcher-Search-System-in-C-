@@ -39,7 +39,7 @@ namespace DBTestOnAlacritas.Database
 
             return FetchFullResearcherDetail(rComplete.Id);
         }
-        public  List<Researcher> FetchBasicResearcherDetails()
+        public  static List<Researcher> FetchBasicResearcherDetails()
         {
             List<Researcher> basic = new List<Researcher>();
             MySqlConnection conn = estConn();

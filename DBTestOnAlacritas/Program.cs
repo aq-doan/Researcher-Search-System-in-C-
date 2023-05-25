@@ -26,7 +26,7 @@ namespace DBTestOnAlacritas
 
 
             Console.WriteLine("Names from researcher table:");
-            demo.FetchBasicResearcherDetails();
+            
             Console.WriteLine();
             Console.WriteLine("Names read into a DataSet (should be the same as above):");
      

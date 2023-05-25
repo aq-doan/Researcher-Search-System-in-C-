@@ -8,9 +8,9 @@ namespace DBTestOnAlacritas.Entity
 {
     public class Staff : Researcher
     {
-
+        public int FundingReceived { get; set; }
         public List<Position> Positions { get; set; }
-        public List<String> Supervisions { get; set; }
+        public List<Researcher> Supervisions { get; set; }
 
 
 
@@ -76,8 +76,8 @@ namespace DBTestOnAlacritas.Entity
 
             return (float)Math.Round(percentage, 2);
         }
-        /*
-        public float PerformanceByPublication()
+        
+        public double PerformanceByPublication()
         {
             if (DateTime.Now.Year - Tenure() < 1)
             {
@@ -85,11 +85,16 @@ namespace DBTestOnAlacritas.Entity
             }
 
             int totalPublications = PublicationList.Count;
-            float performance = (float)totalPublications / (DateTime.Now.Year - Tenure());
+            double performance = (double)totalPublications / (DateTime.Now.Year - Tenure());
 
-            return (float)Math.Round(performance, 2);
-        }*/
-        //missing performance by funding
+            return (double)Math.Round(performance, 2);
+        }
+        public double PerformanceByFunding()
+        {
+            int commencementYearCount = DateTime.Now.Year - start_job.Year + 1;
+            double fundReceivePerformance = FundingReceived / (double)commencementYearCount;
+            return fundReceivePerformance;
+        }
     }
 }
 

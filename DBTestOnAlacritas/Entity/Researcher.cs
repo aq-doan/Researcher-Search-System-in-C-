@@ -39,11 +39,14 @@ namespace DBTestOnAlacritas.Entity
         }
         public DateTime EarliestStart { get; set; }
 
-        public float Tenure { get { return (float)((DateTime.Now - start_job).TotalDays / 365); } }
-
-        public int PublicationsCount()
+        public double Tenure()
         {
-            return PublicationList.Count();
+            return DateTime.Now.Year - start_job.Year;
         }
+
+
+        public int PublicationCount { get; set; }
     }
+    
 }
+

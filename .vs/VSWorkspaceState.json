@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Database"
   ],
+  "SelectedNode": "\\Database\\ERDAdapter.cs",
   "PreviewInSolutionExplorer": false
 }

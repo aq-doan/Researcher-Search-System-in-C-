@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Superfly123AQ\source\repos\KIT206Assignment2213123\obj\Release\
+C:\Users\Superfly123AQ\source\repos\KIT206Assignment2213123\obj\Debug\
 AssigmentSpecification
 none
 false
-TRACE
+DEBUG;TRACE
 C:\Users\Superfly123AQ\source\repos\KIT206Assignment2213123\App.xaml
 7-170948295
 
-201594610908
+21-487477710
 31552391987
 View\CumulativeCountView.xaml;View\MainPublicationsAndCount.xaml;View\MainWindow.xaml;View\PerformanceDetailView.xaml;View\PublicationsDetailsView.xaml;View\ResearcherDetailsView.xaml;View\ResearcherListView.xaml;
 
-True
+False
 

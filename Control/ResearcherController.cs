@@ -6,18 +6,73 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using AssigmentSpecification.Database;
+using System.Xml.Serialization;
+using System.IO;
+
 namespace AssigmentSpecification.Control
 {
+    [XmlRoot(ElementName = "Projects")]
+    public class ListOfProject
+    {
+        [XmlElement("Project")]
+        public List<xmlP> pList { get; set; }
+    }
+
+    public class xmlP
+    {
+        [XmlElement("Funding")]
+        public int Funding { get; set; }
+
+        [XmlElement("Year")]
+        public int Year { get; set; }
+
+        [XmlElement("Researchers")]
+        public List<Researchers> rListXml { get; set; }
+    }
+
+    public class Researchers
+    {
+        [XmlElement("staff_id")]
+        public List<int> xmlIDList { get; set; }
+    }
+
+    public class CumulativePair
+    {
+        public int Year { get; set; }
+        public int Count { get; set; }
+    }
+
+    public class PerformancePair
+    {
+        public int Performance { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Title { get; set; }
+    }
     public class ResearcherController
     {
         public static List<Researcher> listControllerResearcher { get;  set; }
         public static List<Researcher> filteredResearcherController { get; set; }
         public static Researcher CurrentResearcher { get;  set; }
-        
+
+        private static ListOfProject projectControllerXml;
         public static List<Researcher> LoadResearcher()
         {
             listControllerResearcher = ERDAdapter.FetchBasicResearcherDetails();
-            return filteredResearcherController = listControllerResearcher;
+            filteredResearcherController = listControllerResearcher;
+            string fundingFilePath = "../../Control/Fundings_Rankings.xml";
+            string fundingFileStr = System.IO.File.ReadAllText(fundingFilePath);
+
+            XmlSerializer serializer = new XmlSerializer(typeof(ListOfProject));
+
+            ListOfProject projectControllerXml;
+
+            using (TextReader reader = new StringReader(fundingFileStr))
+            {
+                projectControllerXml = (ListOfProject)serializer.Deserialize(reader);
+            }
+
+            return filteredResearcherController;
         }
         
         public static List<Researcher> FilterBy(EmploymentLevel level)
@@ -84,32 +139,151 @@ namespace AssigmentSpecification.Control
             return name;
         }
 
-        public static List<Researcher> GetSupervisionList()
+        public static List<Researcher> GetSupervisionList(Researcher s)
         {
-            if (CurrentResearcher is Staff staff)
+            List<Researcher> list = new List<Researcher>();
+
+            foreach (var researcher in listControllerResearcher)
             {
-                return staff.Supervisions;
+                if (researcher is Student student && student.SupervisorName == s.Id)
+                {
+                    list.Add(student);
+                }
             }
 
-            return new List<Researcher>();
+            return list;
         }
-        public static void LoadResearcherDetail(int researcherId)
-        {
-            Researcher researcher = listControllerResearcher.FirstOrDefault(r => r.Id == researcherId);
-            if (researcher != null)
-            {
-                researcher = ERDAdapter.CompleteResearcherDetails(researcher);
-                researcher.PublicationList = PublicationController.LoadPublicationList(researcher);
-                researcher.PublicationCount = researcher.PublicationList.Count;
 
+        public static void LoadDetailR(int researcherId)
+        {
+            string fundingFilePath = "../../Control/Fundings_Rankings.xml";
+            using (var fileStream = new FileStream(fundingFilePath, FileMode.Open))
+            {
+                var serializer = new XmlSerializer(typeof(ListOfProject));
+                projectControllerXml = (ListOfProject)serializer.Deserialize(fileStream);
+            }
+
+            Researcher selectedResearcher = null;
+
+            foreach (var researcher in listControllerResearcher)
+            {
+                if (researcherId == researcher.Id)
+                {
+                
+                    selectedResearcher = ERDAdapter.CompleteResearcherDetails(researcher);
+
+               
+                    selectedResearcher.PublicationList = PublicationController.LoadPublicationList(selectedResearcher);
+
+                 
+                    selectedResearcher.PublicationCount = selectedResearcher.PublicationList.Count;
+
+                
+                    if (selectedResearcher is Staff staff)
+                    {
+                        // Assign supervisee list for the selected staff
+                        staff.Supervisions = GetSupervisionList(selectedResearcher);
+
+                        // Calculate funding sum of the selected researcher
+                        int totalFunding = 0;
+                        foreach (xmlP project in projectControllerXml.pList)
+                        {
+                            foreach (Researchers researchers in project.rListXml)
+                            {
+                                foreach (int staffId in researchers.xmlIDList)
+                                {
+                                    if (staffId == researcherId)
+                                    {
+                                        totalFunding += project.Funding;
+                                    }
+                                }
+                            }
+                        }
+                        staff.FundingReceived = totalFunding;
+                    }
+
+                    // Set current selected researcher
+                    CurrentResearcher = selectedResearcher;
+
+                    // Target found, stop the search loop
+                    break;
+                }
+            }
+        }
+
+
+
+
+        public static List<PerformancePair>[] GetPerformanceReport()
+        {
+            List<PerformancePair>[] performanceListGroups = new List<PerformancePair>[4];
+            for (int i = 0; i < performanceListGroups.Length; i++)
+            {
+                performanceListGroups[i] = new List<PerformancePair>();
+            }
+
+            foreach (var researcher in listControllerResearcher)
+            {
                 if (researcher is Staff staff)
                 {
-                    staff.Supervisions = LoadSupervision(staff);
-                }
+                    LoadDetailR(researcher.Id);
 
-                CurrentResearcher = researcher;
+                    int performance = (int)(staff.PerformanceByPublication() * 100);
+                    var performancePair = new PerformancePair
+                    {
+                        FirstName = researcher.GivenName,
+                        LastName = researcher.FamilyName,
+                        Title = researcher.Title,
+                        Performance = performance
+                    };
+
+                    if (performance >= 200)
+                    {
+                        performanceListGroups[3].Add(performancePair);
+                    }
+                    else if (performance >= 110)
+                    {
+                        performanceListGroups[2].Add(performancePair);
+                    }
+                    else if (performance >= 70)
+                    {
+                        performanceListGroups[1].Add(performancePair);
+                    }
+                    else
+                    {
+                        performanceListGroups[0].Add(performancePair);
+                    }
+                }
             }
+
+            foreach (var group in performanceListGroups)
+            {
+                group.Sort((perf1, perf2) => perf1.Performance.CompareTo(perf2.Performance));
+            }
+
+            return performanceListGroups;
         }
+
+
+        public static string GetEmailForAll()
+        {
+            StringBuilder mails = new StringBuilder();
+
+            foreach (Researcher current in listControllerResearcher)
+            {
+                if (current is Staff staff)
+                {
+                    if (mails.Length > 0)
+                    {
+                        mails.Append(", ");
+                    }
+                    mails.Append(staff.Email);
+                }
+            }
+
+            return mails.ToString();
+        }
+
         public static List<(int, int)> CumulativeCount()
         {
             List<(int, int)> cumulativeList = new List<(int, int)>();

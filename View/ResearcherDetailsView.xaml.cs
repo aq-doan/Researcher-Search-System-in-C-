@@ -84,7 +84,7 @@ namespace AssigmentSpecification.View
             }
             else
             {
-                var listRe = ResearcherController.GetSupervisionList();
+                var listRe = ResearcherController.GetSupervisionList(r);
                 if (listRe.Count > 0)
                 {
                     var text = "";

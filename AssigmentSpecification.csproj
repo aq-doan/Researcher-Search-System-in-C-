@@ -223,8 +223,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Database\Fundings_Rankings.xml" />
-    <Resource Include="Database\PublicationRecord.xml" />
+    <Resource Include="Control\Fundings_Rankings.xml" />
+    <Resource Include="Control\PublicationRecord.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

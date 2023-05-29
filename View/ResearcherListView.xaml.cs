@@ -92,7 +92,7 @@ namespace AssigmentSpecification.View
         private void dgDataNameLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = (sender as DataGrid).SelectedItem as Researcher;
-            ResearcherController.LoadResearcherDetail(item.Id);
+            ResearcherController.LoadDetailR(item.Id);
             var dataDetails = ResearcherController.CurrentResearcher;
 
             MainWindow w = this.DataContext as MainWindow;

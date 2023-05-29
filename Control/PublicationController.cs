@@ -1,12 +1,12 @@
-﻿using DBTestOnAlacritas.Database;
-using DBTestOnAlacritas.Entity;
+﻿using AssigmentSpecification.Database;
+using AssigmentSpecification.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBTestOnAlacritas.Control
+namespace AssigmentSpecification.Control
 {
     public static class PublicationController
     {

@@ -1,12 +1,12 @@
-﻿using DBTestOnAlacritas.Entity;
+﻿using AssigmentSpecification.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using DBTestOnAlacritas.Database;
-namespace DBTestOnAlacritas.Control
+using AssigmentSpecification.Database;
+namespace AssigmentSpecification.Control
 {
     public class ResearcherController
     {

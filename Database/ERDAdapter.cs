@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using MySql.Data.MySqlClient;
-using DBTestOnAlacritas.Entity;
+using AssigmentSpecification.Entity;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using System.Reflection.Emit;
 
 
-namespace DBTestOnAlacritas.Database
+namespace AssigmentSpecification.Database
 {
     public  class ERDAdapter
     {
@@ -93,6 +93,25 @@ namespace DBTestOnAlacritas.Database
                 conn.Close();
 
             }
+            /* White box testing
+            basic.Add(new Student
+            {
+                Id = 123456,
+                GivenName = "John",
+                FamilyName = "Doe",
+                Title = "Mr",
+                Job = EmploymentLevel.Student,
+                SupervisorName = 123457
+            });
+
+            basic.Add(new Staff
+            {
+                Id = 123458,
+                GivenName = "Jane",
+                FamilyName = "Smith",
+                Title = "Dr",
+                Job = EmploymentLevel.A
+            }); */
             return basic;
         }
         public static Researcher FetchFullResearcherDetail(int idFull)

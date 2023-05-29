@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="AssigmentSpecification.View.ResearcherListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AssigmentSpecification.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="450">
+    <Grid x:Name="researcher_list_view">
+        <materialDesign:Card Padding="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Grid.Row="0">
+                            <!--Level-->
+                            <TextBlock Margin="10,6,10,13" Text="Level" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="#000000"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <ComboBox Text="All" IsEditable="True" IsReadOnly="True" Margin="0,5,0,13" Name="cboLevel" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" Width="110"  BorderBrush="Black" BorderThickness="1">
+                                <ComboBoxItem Content="Student" HorizontalContentAlignment="Left"></ComboBoxItem>
+                                <ComboBoxItem Content="A" HorizontalContentAlignment="Left"></ComboBoxItem>
+                                <ComboBoxItem Content="B" HorizontalContentAlignment="Left"></ComboBoxItem>
+                                <ComboBoxItem Content="C" HorizontalContentAlignment="Left"></ComboBoxItem>
+                                <ComboBoxItem Content="D" HorizontalContentAlignment="Left"></ComboBoxItem>
+                                <ComboBoxItem Content="E" HorizontalContentAlignment="Left"></ComboBoxItem>
+                                <ComboBoxItem Content="Other" HorizontalContentAlignment="Left"></ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Grid.Row="0">
+                            <TextBlock Margin="10,6,10,13" Text="Name:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="#000000"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="0">
+                            <TextBox Margin="0,6,0,13" ToolTip="Name" BorderBrush="Black" BorderThickness="1" x:Name="txtName" Height="25"  HorizontalAlignment="Stretch" FontSize="15" FontWeight="Normal" Foreground="#000000" Background="#FFFFFF"  VerticalAlignment="Center" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="2">
+                        <!--Button Search-->
+                        <Button x:Name="btnSearch" Background="#FFFFFF" Height="18" Margin="5,6,5,13" BorderBrush="Black" BorderThickness="1" Click="btnSearch_Click">
+                            <TextBlock VerticalAlignment="Bottom" TextAlignment="Center" FontSize="12"  Foreground="#000000">Search</TextBlock>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <Border BorderBrush="Silver" BorderThickness="1" Grid.Row="1" Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <DataGrid x:Name="dgDataNameLevel" Background="#FFFFFF" BorderBrush="Black" BorderThickness="1" Grid.Row="3" CanUserReorderColumns="False" CanUserResizeColumns="False"  CanUserSortColumns="False" GridLinesVisibility="Horizontal" HeadersVisibility="Column" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" IsReadOnly="True" AutoGenerateColumns="False" Focusable="False" HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False" PreviewMouseDown="dgDataNameLevel_PreviewMouseDown" SelectionChanged="dgDataNameLevel_SelectionChanged">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Binding="{Binding GivenName}" Width="2*" Foreground="Black" Header="Name">
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Binding="{Binding Title}"  Width="1*" Foreground="Black"  Header="Level">
+                                        </DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

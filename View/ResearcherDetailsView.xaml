@@ -1,0 +1,468 @@
+﻿<UserControl x:Class="AssigmentSpecification.View.ResearcherDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AssigmentSpecification.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="450">
+    <Grid x:Name="researcher_details_view">
+        <materialDesign:Card Padding="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="Silver" BorderThickness="1" Grid.Row="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!--Research Details-->
+                        <Grid Grid.Row="1">
+                            <TextBlock Text="Research Details" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center"  FontSize="13" Foreground="#000000"></TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1">
+                    <!--Nội dung Research Details-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="5*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <!--bên phải Research Details-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Name:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtName1" Text="Jenny Le" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Title:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="57*"/>
+                                                <ColumnDefinition Width="166*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="txtTitle" Text="Mrs" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <!--để sau phần này-->
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="School:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtSchool" Text="School" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Unit:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtSUnit" Text="KIT 203" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.28*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Campus:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtCampus" Text="Hobart" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.18*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Email:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtEmail" Text="jle@utas.edu.au" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.42*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Current Job:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtCurrentJob" Text="Tutor and Lecturer" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="6">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2.4*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Commenced with instititution:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtCommencedwithinstititution" Text="13/1/2009" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="7">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.01*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                                            <ColumnDefinition Width="1.4*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Commenced with current position:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtCommencedwithcurrentposition" Text="17/12/2014" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.22*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Tenure:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtTenure" Text="10.5" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="9">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.43*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Publications:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtPublications" Text="23" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.57*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Q1 Percentage:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtQ1Percentage" Text="66.6%" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="11">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="3-year Average:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtYearAverage" Text="4" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="12">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.76*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Funding Received:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtFundingReceived" Text="None" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="13">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.48*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Performance:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtPublicationPerformance" Text="220%" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="14">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1.38*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Performance by funding:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtFundingPerformance" Text="None" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="15">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.42*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Supervision:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock x:Name="txtSupevision" Text="James Howard" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000" TextWrapping="WrapWithOverflow"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                
+                                <Grid Grid.Row="17">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="Degree:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock Text="Master of Accounting" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <!--Photo-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="5*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Border BorderBrush="Silver" BorderThickness="1" Grid.Column="0" Grid.Row="0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="109*"/>
+                                        </Grid.RowDefinitions>
+                                        <Image x:Name="imgAvatar" HorizontalAlignment="Left" Height="100" Margin="6,3,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119"/>
+                                        <!--Hình ảnh Research Details-->
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Button HorizontalAlignment="Left" Background="#FFFFFF" BorderBrush="#FFFFFF" x:Name="BtnPublications" Click="BtnPublications_Click">
+                                    <TextBlock Text="Publications:" VerticalAlignment="Center" TextAlignment="Left" HorizontalAlignment="Left"  FontSize="13" Foreground="#000000"></TextBlock>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <!--<DataGrid x:Name="dgDataPublications" Background="#FFFFFF" Grid.Row="3" ScrollViewer.CanContentScroll="False">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Binding="{Binding Name}" Width="1.5*"  Header="Title">
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Binding="{Binding Performance}"  Width="1*"  Header="Date">
+                                        </DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>-->
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

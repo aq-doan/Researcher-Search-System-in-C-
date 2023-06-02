@@ -36,7 +36,7 @@ namespace AssigmentSpecification.View
                 var lstResearchName = ResearcherController.FilterByName(txtName.Text);
                 if (lstResearchName.Count() == 0)
                 {
-                    MessageBox.Show("The search data could not be found !", "Notification", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Không tìm thấy dữ liệu cần tìm !", "Thong báo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
                 else
                 {
@@ -58,7 +58,7 @@ namespace AssigmentSpecification.View
                 var lstResearchName = ResearcherController.FilterBy(levelTemp);
                 if (lstResearchName.Count() == 0)
                 {
-                    MessageBox.Show("The search data could not be found !", "Notification", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Không tìm thấy dữ liệu cần tìm !", "Thong báo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
                 else
                 {

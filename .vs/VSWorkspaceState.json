@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\View"
+    "\\Database"
   ],
-  "SelectedNode": "\\View\\MainWindow.xaml.cs",
+  "SelectedNode": "\\Database\\ERDAdapter.cs",
   "PreviewInSolutionExplorer": false
 }

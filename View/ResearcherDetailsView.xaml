@@ -81,7 +81,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Name:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Name:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtName1" Text="Jenny Le" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -99,7 +99,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Title:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Title:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <Grid.ColumnDefinitions>
@@ -122,7 +122,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="School:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="School:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtSchool" Text="School" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -134,7 +134,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Unit:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Unit:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtSUnit" Text="KIT 203" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -152,7 +152,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Campus:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Campus:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtCampus" Text="Hobart" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -170,7 +170,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Email:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Email:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtEmail" Text="jle@utas.edu.au" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -188,7 +188,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Current Job:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Current Job:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtCurrentJob" Text="Tutor and Lecturer" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -206,7 +206,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Commenced with instititution:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Commenced with instititution:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtCommencedwithinstititution" Text="13/1/2009" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -224,7 +224,7 @@
                                             <ColumnDefinition Width="1.4*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Commenced with current position:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"/>
+                                            <TextBlock Text="Commenced with current position:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"/>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtCommencedwithcurrentposition" Text="17/12/2014" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -242,7 +242,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Tenure:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Tenure:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtTenure" Text="10.5" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -260,7 +260,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Publications:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Publications:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtPublications" Text="23" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -278,7 +278,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Q1 Percentage:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Q1 Percentage:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtQ1Percentage" Text="66.6%" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -296,7 +296,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="3-year Average:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="3-year Average:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtYearAverage" Text="4" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -314,7 +314,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Funding Received:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Funding Received:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtFundingReceived" Text="None" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -332,7 +332,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Performance:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Performance:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtPublicationPerformance" Text="220%" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -350,7 +350,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Performance by funding:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Performance by funding:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtFundingPerformance" Text="None" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
@@ -368,7 +368,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Supervision:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Supervision:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock x:Name="txtSupevision" Text="James Howard" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000" TextWrapping="WrapWithOverflow"></TextBlock>
@@ -387,7 +387,7 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <TextBlock Text="Degree:" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
+                                            <TextBlock Text="Degree:" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock Text="Master of Accounting" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"  FontSize="10" Foreground="#000000"></TextBlock>

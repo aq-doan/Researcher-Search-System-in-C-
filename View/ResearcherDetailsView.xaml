@@ -435,11 +435,15 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.1*"></ColumnDefinition>
                                 <ColumnDefinition Width="3*"></ColumnDefinition>
-                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="1">
                                 <Button HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" x:Name="BtnPublications" Click="BtnPublications_Click">
                                     <TextBlock Text="Publications" VerticalAlignment="Center" TextAlignment="Left" HorizontalAlignment="Left"  FontSize="13" Foreground="#000000"></TextBlock>
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Button HorizontalAlignment="Right" BorderBrush="Black" BorderThickness="1" x:Name="BtnCumulativeCount" Click="BtnCumulativeCount_Click">
+                                    <TextBlock Text="Cumulative Count" VerticalAlignment="Center" TextAlignment="Left" HorizontalAlignment="Left"  FontSize="13" Foreground="#000000"></TextBlock>
                                 </Button>
                             </Grid>
                         </Grid>

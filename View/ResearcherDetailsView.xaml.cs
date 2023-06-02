@@ -115,5 +115,12 @@ namespace AssigmentSpecification.View
 
             mainpubliandcount.Show();
         }
+
+        private void BtnCumulativeCount_Click(object sender, RoutedEventArgs e)
+        {
+            CumulativeCountView mainpubliandcount = new CumulativeCountView(list);
+
+            mainpubliandcount.Show();
+        }
     }
 }

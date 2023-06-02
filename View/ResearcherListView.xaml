@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:AssigmentSpecification.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="450">
+   
     <Grid x:Name="researcher_list_view">
         <materialDesign:Card Padding="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -64,6 +65,7 @@
                         </Button>
                     </Grid>
                 </Grid>
+              
                 <Border BorderBrush="Silver" BorderThickness="1" Grid.Row="1" Grid.Column="0">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -79,9 +81,15 @@
                             <Grid Grid.Column="1">
                                 <DataGrid x:Name="dgDataNameLevel" Background="#FFFFFF" BorderBrush="Black" BorderThickness="1" Grid.Row="3" CanUserReorderColumns="False" CanUserResizeColumns="False"  CanUserSortColumns="False" GridLinesVisibility="Horizontal" HeadersVisibility="Column" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" IsReadOnly="True" AutoGenerateColumns="False" Focusable="False" HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False" PreviewMouseDown="dgDataNameLevel_PreviewMouseDown" SelectionChanged="dgDataNameLevel_SelectionChanged">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Binding="{Binding GivenName}" Width="2*" Foreground="Black" Header="Name">
+                                        <DataGridTextColumn Width="2*" Foreground="Black" Header="Name">
+                                            <DataGridTextColumn.Binding>
+                                                <MultiBinding StringFormat="{}{0}, {1}">
+                                                    <Binding Path="GivenName" />
+                                                    <Binding Path="FamilyName" />
+                                                </MultiBinding>
+                                            </DataGridTextColumn.Binding>
                                         </DataGridTextColumn>
-                                        <DataGridTextColumn Binding="{Binding Title}"  Width="1*" Foreground="Black"  Header="Level">
+                                        <DataGridTextColumn Binding="{Binding Title}"  Width="1*" Foreground="Black"  Header="Title">
                                         </DataGridTextColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>

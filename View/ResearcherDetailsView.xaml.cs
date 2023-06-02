@@ -1,6 +1,5 @@
 ﻿using AssigmentSpecification.Entity;
 using AssigmentSpecification.Control;
-using AssigmentSpecification.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -121,6 +120,19 @@ namespace AssigmentSpecification.View
             CumulaCountView mainpubliandcount = new CumulaCountView(list);
 
             mainpubliandcount.Show();
+        }
+
+
+        public List<Researcher> GetSelectedResearcherSupervieeList()
+        {
+            return (ResearcherController.CurrentResearcher as Staff).Supervisions;
+        }
+
+        private void OnSuperviseeButtonPress(object sender, RoutedEventArgs e)
+        {
+            //create and display supervisees window
+            SupervisionView supervisionWindow = new SupervisionView();
+            supervisionWindow.Show();
         }
     }
 }

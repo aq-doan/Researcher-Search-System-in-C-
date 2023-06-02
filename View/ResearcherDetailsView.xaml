@@ -449,19 +449,12 @@
                         </Grid>
                         <Grid Grid.Row="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
-                                <ColumnDefinition Width="3*"></ColumnDefinition>
-                                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="1">
-                                <!--<DataGrid x:Name="dgDataPublications" Background="#FFFFFF" Grid.Row="3" ScrollViewer.CanContentScroll="False">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Binding="{Binding Name}" Width="1.5*"  Header="Title">
-                                        </DataGridTextColumn>
-                                        <DataGridTextColumn Binding="{Binding Performance}"  Width="1*"  Header="Date">
-                                        </DataGridTextColumn>
-                                    </DataGrid.Columns>
-                                </DataGrid>-->
+                                <Button Content="Supervisions Details" Width="120" Height="30" Click="OnSuperviseeButtonPress"/>
                             </Grid>
                         </Grid>
                     </Grid>

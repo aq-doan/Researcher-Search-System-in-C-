@@ -132,6 +132,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Entity\PerformanceReport.cs" />
+    <Compile Include="View\SupervisionView.xaml.cs">
+      <DependentUpon>SupervisionView.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\CumulaCountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -199,6 +202,10 @@
     <Page Include="View\ResearcherListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SupervisionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

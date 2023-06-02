@@ -132,6 +132,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Entity\PerformanceReport.cs" />
+    <Page Include="View\CumulaCountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="View\CumulaCountView.xaml.cs">
+      <DependentUpon>CumulaCountView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CumulativeCountView.xaml.cs">
       <DependentUpon>CumulativeCountView.xaml</DependentUpon>
     </Compile>

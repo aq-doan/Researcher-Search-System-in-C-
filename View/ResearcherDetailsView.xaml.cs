@@ -118,7 +118,7 @@ namespace AssigmentSpecification.View
 
         private void BtnCumulativeCount_Click(object sender, RoutedEventArgs e)
         {
-            CumulativeCountView mainpubliandcount = new CumulativeCountView(list);
+            CumulaCountView mainpubliandcount = new CumulaCountView(list);
 
             mainpubliandcount.Show();
         }

@@ -19,18 +19,24 @@ namespace AssigmentSpecification.View
     /// <summary>
     /// Interaction logic for MainPublicationsAndCount.xaml
     /// </summary>
-    public partial class MainPublicationsAndCount : Window
+    public partial class CumulaCountView : Window
     {
-        public MainPublicationsAndCount()
+        public CumulaCountView()
         {
             InitializeComponent();
         }
 
-        public MainPublicationsAndCount(List<Publication> list)
+        public CumulaCountView(List<Publication> list)
         {
             InitializeComponent();
-            publicationsDetailsView.DataContext = list;
+            var a = ResearcherController.CumulativeCount();
 
+            cumulativeCountView.DataContext = a;
+
+        }
+
+        private void cumulativeCountView_Loaded(object sender, RoutedEventArgs e)
+        {
 
         }
     }

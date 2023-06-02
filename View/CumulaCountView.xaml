@@ -1,4 +1,4 @@
-﻿<Window x:Class="AssigmentSpecification.View.MainPublicationsAndCount"
+﻿<Window x:Class="AssigmentSpecification.View.CumulaCountView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,6 +9,6 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <local:PublicationsDetailsView Grid.Row="0" x:Name="publicationsDetailsView"/>
+        <local:CumulativeCountView Grid.Row="1" x:Name="cumulativeCountView" Loaded="cumulativeCountView_Loaded"/>
     </Grid>
 </Window>

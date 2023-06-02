@@ -9,6 +9,6 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <local:CumulativeCountView Grid.Row="1" x:Name="cumulativeCountView" Loaded="cumulativeCountView_Loaded"/>
+        <local:CumulativeCountView Grid.Row="1" x:Name="cumulativeCountView"/>
     </Grid>
 </Window>

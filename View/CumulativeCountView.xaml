@@ -14,14 +14,14 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock Text="Publications Count" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center"  FontSize="13" Foreground="#000000"></TextBlock>
+                    <TextBlock Text="Cumulative Count" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center"  FontSize="13" Foreground="#000000"></TextBlock>
                 </Grid>
                 <Grid Grid.Row="1">
                     <DataGrid x:Name="dgDataPublicationsCount" Background="#FFFFFF" Grid.Row="3" Loaded="dgDataPublicationsCount_Loaded">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Name}" Width="*"  Header="Title">
+                            <DataGridTextColumn Binding="{Binding Name}" Width="*" Header="Count">
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Performance}"  Width="*"  Header="Date">
+                            <DataGridTextColumn Binding="{Binding Performance}"  Width="*"  Header="Year">
                             </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>

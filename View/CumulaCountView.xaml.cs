@@ -35,9 +35,5 @@ namespace AssigmentSpecification.View
 
         }
 
-        private void cumulativeCountView_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

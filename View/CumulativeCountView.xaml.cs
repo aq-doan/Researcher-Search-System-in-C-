@@ -27,8 +27,8 @@ namespace AssigmentSpecification.View
 
         public class Data
         {
-            public string Title { get; set; }
-            public string Date { get; set; }
+            public string Count { get; set; }
+            public string Year { get; set; }
         }
 
         private void dgDataPublicationsCount_Loaded(object sender, RoutedEventArgs e)
@@ -39,8 +39,8 @@ namespace AssigmentSpecification.View
             {
                 Data d = new Data()
                 {
-                    Title = item.Item2.ToString(),
-                    Date = item.Item1.ToString(),
+                    Count = item.Item2.ToString(),
+                    Year = item.Item1.ToString(),
                 };
                 data.Add(d);    
             }
